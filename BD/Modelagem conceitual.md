@@ -18,6 +18,7 @@
 </p>
 <br><br>
 
+# 🤖 Modelo Lógico:
 - Modelo lógico.
 <p align="center">
 <img src="https://github.com/user-attachments/assets/dce22fef-436e-4d26-8c09-f6e27c526162" width="700px" border="0" >
