@@ -6,15 +6,15 @@
 
 # Projeto Relacionado às ODS's para limpeza de rios.
   
-## NOME DO PROJETO: *Barreira Ecológica Automática (BEA)* 🌱
-# Integrantes
-- Ana Clara De Souza Da Silva
-- Fabricio Yukio Yamashiro
-- Larissa De Almeida Lira Oliveira
-- Marcos Paulo Fernandes Do Nascimento
-- Vinicius Cardoso De Lima
+## 🌱 Barreira Ecológica Automática (BEA) 
+# Integrantes:
+### - <a href="https://www.linkedin.com/in/ana-c-de-souza-2b640922a/">Ana Clara De Souza Da Silva
+### - Fabricio Yukio Yamashiro
+### - Larissa De Almeida Lira Oliveira
+### - Marcos Paulo Fernandes Do Nascimento
+### - <a href="https://www.linkedin.com/in/vinicius-cardoso-de-lima-a9a918227/">Vinicius Cardoso De Lima
 ## Professores Orientadores:
-- Victor Bruno Alexander Rosetti de Quiroz
+### - <a href="https://www.linkedin.com/in/victorbarq/">Victor Bruno Alexander Rosetti de Quiroz
 
 # Descrição:
 
@@ -29,15 +29,21 @@ Portanto como forma de manutenção preventiva, para evitar esse tipo de desastr
 <p align="center">
 <img src="https://github.com/user-attachments/assets/3af2d9d0-9894-4afb-aace-7c225ca56bab" width="700px" border="0" >
   <p align="center">
-  <a> Modelagem by Larissa De Almeida Lira Oliveira <a>
+  <a> Modelagem por Larissa De Almeida Lira Oliveira <a>
 </p>
 
 ## 🛠 Instalação
 A instalação só funciona por Windows.
-</p>
-Abra o aplicativo "ARDUÍNO IDE".
 
-Selecione a placa na quel o código será executado.
+Faça o download do aplicativo ARDUÍNO IDE através do <a href="https://www.arduino.cc/en/software/">site oficial</a>.
+
+Já com o Arduino IDE instalado, execute-o e clique em Arquivo, e logo em seguida em Preferências.
+
+Uma janela será aberta. Cole o código "https://dl.espressif.com/dl/package_esp32_index.json" na aba de URL's adicionais.
+
+Selecione a placa na qual o código será executado.
+
+
 
 Insira o código a seguir:
 
@@ -47,7 +53,10 @@ Coloque código do prompt de comnando se for necessário
 
 Apete em carregar o código.
 
-``c++``
+## Fearramentas utilizadas:
+``C++``
+``Arduíno IDE``
+
 
 ## 🎓 Referências:
 - https://blog.brkambiental.com.br/descarte-de-lixo/
