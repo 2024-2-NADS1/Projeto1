@@ -11,7 +11,7 @@
 ### - <a href="https://www.linkedin.com/in/ana-c-de-souza-2b640922a/">Ana Clara De Souza Da Silva
 ### - Fabricio Yukio Yamashiro
 ### - Larissa De Almeida Lira Oliveira
-### - Marcos Paulo Fernandes Do Nascimento
+### - <a href="https://www.linkedin.com/in/marcos-nascimento-985775317/">Marcos Paulo Fernandes Do Nascimento
 ### - <a href="https://www.linkedin.com/in/vinicius-cardoso-de-lima-a9a918227/">Vinicius Cardoso De Lima
 ## Professores Orientadores:
 ### - <a href="https://www.linkedin.com/in/victorbarq/">Victor Bruno Alexander Rosetti de Quiroz
