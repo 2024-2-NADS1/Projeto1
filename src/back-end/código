@@ -9,7 +9,7 @@ byte pinClk = 12; // pino sensor de peso SCK
 int sensorInfra = A0;  // Pino onde o sensor IR está conectado
 
 float ultimaLeitura = 0; // variavel que guarda a última leitura do sensor de peso
-float tensao = 4.0; // define o valor minimo aceitavel para o sensor funcionar corretamente
+float tensao = 0.3; // define o valor minimo aceitavel para o sensor funcionar corretamente
 int ultimoEstado = HIGH;  // Último estado do sensor (inicializado como não detectando)
 unsigned long tempoDeteccao = 0; 
 int leituraConsecutivas = 0;
