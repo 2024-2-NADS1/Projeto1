@@ -1,4 +1,4 @@
-```sh
+
 #include "HX711.h"; 
 
 //declaracao dos pinos utilizados para controlar a velocidade de rotacao
@@ -215,4 +215,4 @@ Serial.println();
 #endif
   
 }
-``
+
