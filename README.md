@@ -56,11 +56,11 @@ A instalação só funciona por Windows.
  <br> 2. Motores DC (2 unidades) </br>
  <br> 3. Ponte H </br>
  <br>	4. Módulo de peso </br>
- <br>	5. Protoboard (Reservatório) </br>
- <br>	6. Fonte 5v (Reservatório) </br>
- <br>	7. Nódulo laser (Reservatório) </br>
- <br>	8. Fotorresistor (Reservatório) </br>
- <br>	9. Módulo HX711 (Reservatório) </br>
+ <br>	5. Protoboard </br>
+ <br>	6. Fonte 5v </br>
+ <br>	7. Nódulo laser </br>
+ <br>	8. Fotorresistor </br>
+ <br>	9. Módulo HX711 </br>
 
 ## Fearramentas utilizadas:
 - ``C++``<br>
