@@ -1,4 +1,4 @@
-# Modulo Físico:
+# Modelo Físico:
 
 - Protótipo
 <br>
