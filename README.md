@@ -58,7 +58,7 @@ A instalação só funciona por Windows.
  <br>	4. Módulo de peso </br>
  <br>	5. Protoboard </br>
  <br>	6. Fonte 5v </br>
- <br>	7. Nódulo laser </br>
+ <br>	7. Módulo laser </br>
  <br>	8. Fotorresistor </br>
  <br>	9. Módulo HX711 </br>
 
