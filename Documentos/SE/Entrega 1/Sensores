@@ -1,1 +1,5 @@
+Sensores Utilizados
 
+    Para o desenvolvimento do projeto, realizamos pesquisas e estudamos a melhor forma de desenvolver um sistema que atendesse às necessidades propostas. Decidimos utilizar alguns sensores, sendo eles:
+
+Célula de carga: É um sensor usado para medir força ou peso. Quando uma força é aplicada à célula de carga, ela se deforma ligeiramente, e essa deformação resulta em uma mudança na resistência elétrica dos fios de metal. Com base na mudança na resistência medida, o circuito eletrônico converte essa informação em um valor de peso. O valor de peso calculado é então enviado para um sistema de controle. Ele será aplicado na caçamba, onde o lixo recolhido pela rede será despejado, e um aviso será enviado para a retirada do lixo, dependendo do peso aplicado. 
