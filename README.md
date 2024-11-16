@@ -6,7 +6,7 @@
 
 # Projeto Relacionado às ODS's para limpeza de rios.
   
-## 🌱 Barreira Ecológica Automática (BEA) 
+## 🌱 Barreira Ecológica Automática (B.E.A.) 
 # Integrantes:
 ### - <a href="https://www.linkedin.com/in/ana-c-de-souza-2b640922a/">Ana Clara De Souza Da Silva
 ### - Fabricio Yukio Yamashiro
@@ -35,28 +35,87 @@ Portanto como forma de manutenção preventiva, para evitar esse tipo de desastr
 ## 🛠 Instalação
 A instalação só funciona por Windows.
 
-Faça o download do aplicativo ARDUÍNO IDE através do <a href="https://www.arduino.cc/en/software/">site oficial</a>.
+- Faça o download do aplicativo ARDUÍNO IDE através do <a href="https://www.arduino.cc/en/software/">site oficial</a>.
 
-Já com o Arduino IDE instalado, execute-o e clique em Arquivo, e logo em seguida em Preferências.
+- Já com o Arduino IDE instalado, execute-o e clique em Arquivo, e logo em seguida em Preferências.
 
-Uma janela será aberta. Cole o código "https://dl.espressif.com/dl/package_esp32_index.json" na aba de URL's adicionais.
+- Uma janela será aberta. Cole o código "https://dl.espressif.com/dl/package_esp32_index.json" na aba de URL's adicionais.
 
-Selecione a placa na qual o código será executado.
+- Selecione a placa na qual o código será executado.
+
+- Insira o código contido na pasta scr.
+
+- Apete em carregar o código.
+
+## 📖 Componentes
+![image](https://github.com/user-attachments/assets/e1bba79b-63cc-4641-8e0c-7abe29879e59)
 
 
-
-Insira o código a seguir:
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-Apete em carregar o código.
+### <br> 🛠 Hardware</br>
+ <br> 1. ESP32 </br>
+ <br> 2. Motores DC (2 unidades) </br>
+ <br> 3. Ponte H </br>
+ <br>	4. Módulo de peso </br>
+ <br>	5. Protoboard (Reservatório) </br>
+ <br>	6. Fonte 5v (Reservatório) </br>
+ <br>	7. Nódulo laser (Reservatório) </br>
+ <br>	8. Fotorresistor (Reservatório) </br>
+ <br>	9. Módulo HX711 (Reservatório) </br>
 
 ## Fearramentas utilizadas:
-``C++``
-``Arduíno IDE``
+- ``C++``<br>
+- ``Arduíno IDE``<br>
 
+## 🛠 Estrutura de pastas
+
+-Raiz<br>
+|<br>
+|-->Documentos<br>
+  &emsp;|-->BD<br>
+  &emsp;|Entrega 1 <br>
+      > Justificativa <br>
+  &emsp;|Entrega 2 <br>
+      > Modelagem Conceitual <br>
+  &emsp;|Entrega 3 <br>
+      > Modelagem Física (de duas tabelas) <br>
+  &emsp;|Entrega 4 <br>
+      > Modelagem Física (de todas as tabelas) <br>
+  &emsp;|-->SE<br>
+  &emsp;|Entrega 1 <br>
+      > Sensores <br>
+  &emsp;|Entrega 2 <br>
+      > Funcionamento Sensor Laser <br>
+  &emsp;|Entrega 3 <br>
+      > Modelo Físico (de duas tabelas) <br>
+|-->imagens<br>
+|-->src<br>
+  &emsp;|-->Backend<br>
+  &emsp;|Código <br>
+  &emsp;|-->Frontend<br>
+|readme.md<br>
+
+<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+
+Há também 4 pastas que seguem da seguinte forma:
+
+<b>documentos</b>: Toda a documentação estará nesta pasta.
+
+<b>imagens</b>: Imagens do sistema
+
+<b>src</b>: Pasta que contém o código fonte.
+
+## 🗃 Histórico de Lançamentos
+
+- **0.1.0** - 13/10/2024: Compra de materiais.
+- **0.2.0** - 15/10/2024: Criação do protótipo 3D.
+- **0.3.0** - 20/10/2024 a 13/11/2024 : Teste de sensores.
+- **0.4.0** - 05/11/2024 a 17/11/2024: Organização do GitHub e pastas.
+- **0.5.0** - 11/11/2024: Desenvolvimento do código e circuito.
+- **0.6.0** - 13/11/2024: Integração ao Blynk.
+- **0.7.0** - 17/11/2024: Conclusão do projeto.
+
+## 📋 Licença/License
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/2024-2-NADS1/Projeto1">Barreira Ambiental Ecológica (B.E.A.) </a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
 ## 🎓 Referências:
 - https://blog.brkambiental.com.br/descarte-de-lixo/
