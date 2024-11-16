@@ -1,4 +1,4 @@
-# 🤓 Esquema Protótipo:
+# Esquema Protótipo:
 
 - Esquema utilizando sensor de peso e motor DC
 <br>
