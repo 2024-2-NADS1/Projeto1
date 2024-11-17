@@ -1,5 +1,32 @@
+#define BLYNK_TEMPLATE_ID "TMPL2WnHJ55AR" //template criado para o projeto
+#define BLYNK_TEMPLATE_NAME "BEA" //nome do template
+#define BLYNK_AUTH_TOKEN "q3gIDy126exES2zY9lXYzxBFtmhvBdPI"
+#define BLYNK_PRINT Serial // Print serial do Blynk
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
+#include <HX711.h>
 
-#include "HX711.h"; 
+char auth[] = BLYNK_AUTH_TOKEN; // Token de autenticação
+char ssid[] = "Nome da rede"; // Nome da rede Wi-Fi
+char pass[] = "Senha da rede"; // Senha da rede Wi-Fi
+
+BLYNK_CONNECTED() {
+  Blynk.syncVirtual(V1); // Conectando os pinos virtuais 1, 2 e 3
+  Blynk.syncVirtual(V2);
+  Blynk.syncVirtual(V3);
+}
+
+// Sensores
+float ultimaLeitura = 0;
+int sensorPino1 = 23;
+int sensorPino2 = 24;
+int sensorPinoAnalogico = A0; // Nome alterado para maior clareza
+float tensao = 4.0; // Define o valor mínimo aceitável para o sensor funcionar
+
+int sensorInfra = T2; // Pino onde o sensor IR está conectado
+int ultEstado = HIGH; // Último estado do sensor (inicializado como não detectando)
+unsigned long tempoDeteccao = 0;
 
 //declaracao dos pinos utilizados para controlar a velocidade de rotacao
 const int PINO_ENA = 17; 
@@ -40,6 +67,9 @@ HX711 scale;
 
 void setup() {
 
+  Serial.begin(115200); // Comeca a comunicacao da esp com a plataforma do blynk
+  Blynk.begin(auth, ssid, pass); //valida os dados passados da rede
+
   //configuração dos pinos como saida
   pinMode(PINO_ENA, OUTPUT); 
   pinMode(PINO_ENB, OUTPUT);
@@ -69,6 +99,7 @@ void setup() {
     while(1);
   }else {
     Serial.println("Sensor de peso inicializado com sucesso.");
+    Blynk.virtualWrite(V0, "Sensor de peso incializado."); //Envia o alerta de que o sensor está ligado
   }
 
   scale.set_scale(calibracao); // ajusta a escala. Converte em unidades de medidas reais
@@ -86,7 +117,8 @@ void verificarSensorPeso(float min, float max, int maxConstantes){
     if(peso < min || peso > max){
       Serial.println("Alerta, fora do limite");
     }else{
-      Serial.println("peso"+peso);
+      Serial.println("peso"+peso); //correção na impressão do peso
+      Blynk.virtualWrite(V1, peso); //Envia os dados para o Blynk
     }
 
     // verifica se a leitura é constante
@@ -130,6 +162,7 @@ void verificarSensorInfraV() {
     // Verifica se houve uma detecção recente (para evitar falsas leituras)
     if (tempo - tempoDeteccao > 100) {
       Serial.println("Objeto detectado!");
+      Blynk.virtualWrite(V2, "Objeto detectado"); //Envia os dados para o Blynk
       tempoDeteccao = tempo;  // Atualiza o tempo da última detecção
     }
   } 
@@ -137,6 +170,7 @@ void verificarSensorInfraV() {
   // Verifica se o sensor está a muito tempo sem detectar um objeto
   if (tempo - tempoDeteccao > 180000) { // Ajusta o tempo de intervalo em 3 minutos 
     Serial.println("Alerta: Nenhum objeto detectado por muito tempo");
+    Blynk.virtualWrite(V3, "Nenhum objeto detectado");
   }
 
   // Atualiza o último estado para comparação futura
@@ -144,6 +178,7 @@ void verificarSensorInfraV() {
 }
 
 void loop() {
+  Blynk.run();
 
   //configura os motores para o sentido horario
   digitalWrite(PINO_IN1, LOW); 
