@@ -71,27 +71,29 @@ A instalação só funciona por Windows.
 -Raiz<br>
 |<br>
 |-->Documentos<br>
-  &emsp;|-->BD<br>
+  &emsp;|-->Banco de dados<br>
   &emsp;|Entrega 1 <br>
-      > Justificativa <br>
+      &emsp;&emsp;|Justificativa <br>
   &emsp;|Entrega 2 <br>
-      > Modelagem Conceitual <br>
+      &emsp;&emsp;|Modelagem Conceitual <br>
   &emsp;|Entrega 3 <br>
-      > Modelagem Física (de duas tabelas) <br>
+      &emsp;&emsp;|Modelagem Física (de duas tabelas) <br>
   &emsp;|Entrega 4 <br>
-      > Modelagem Física (de todas as tabelas) <br>
+      &emsp;&emsp;|Modelagem Física (de todas as tabelas) <br>
+      <br>
   &emsp;|-->SE<br>
   &emsp;|Entrega 1 <br>
-      > Sensores <br>
+      &emsp;&emsp;|Sensores <br>
   &emsp;|Entrega 2 <br>
-      > Funcionamento Sensor Laser <br>
+      &emsp;&emsp;|Funcionamento Sensor Laser <br>
   &emsp;|Entrega 3 <br>
-      > Modelo Físico (de duas tabelas) <br>
+      &emsp;&emsp;|Modelo Físico (de duas tabelas) <br>
+      <br>
 |-->imagens<br>
 |-->src<br>
   &emsp;|-->Backend<br>
-  &emsp;|Código <br>
-  &emsp;|-->Frontend<br>
+  &emsp;&emsp;|código.ino <br>
+  
 |readme.md<br>
 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
