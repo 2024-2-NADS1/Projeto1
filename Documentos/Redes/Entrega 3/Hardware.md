@@ -5,7 +5,21 @@ O hardware que implementamos, é o Blynk, que é basicamente uma plataforma para
 
 O nosso dashboard ficou mais simples por conta de que o unico dado que o cliente terá acesso, são os pesos das caçambas de lixo, o restante será notificado pela plataforma Web ou pelo aplicativo móvel do Blynk.
 
-Os alertas serão enviados via E-mail ou Sms, devido a configuração do Blynk que utilizamos e por conta dos códigos implementados.
+Os alertas serão enviados via E-mail ou Sms, devido a configuração do Blynk que utilizamos e por conta dos códigos implementados:
 ```cpp
+ if (estadoSensor < limiar && ultimoEstado >= limiar) {  
+    // Verifica se houve uma detecção recente (para evitar falsas leituras)
+    if (tempo - tempoDeteccao > 100) {
+      Serial.println("Objeto detectado!");
+      Blynk.notify("Objeto detectado!"); //envia um alerta para o Blynk
+      tempoDeteccao = tempo;  // Atualiza o tempo da última detecção
+    }
+  } 
 
+  // Verifica se o sensor está a muito tempo sem detectar um objeto
+  if (tempo - tempoDeteccao > 180000) { // Ajusta o tempo de intervalo em 3 minutos 
+    Serial.println("Alerta: Nenhum objeto detectado por muito tempo");
+    Blynk.notify("Alerta: Nenhum objeto detectado por muito tempo");   
+  }
 ```
+Dessa forma ele alertará tanto no monitor serial quanto nas plataformas do Blynk IoT.
