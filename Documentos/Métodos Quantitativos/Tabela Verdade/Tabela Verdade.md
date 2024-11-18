@@ -1,0 +1,8 @@
+# TABELA VERDADE DOS SENSORES
+
+Sensor A (A): Representa o estado do sensor A. Pode ser 0 (falso) ou 1 (verdadeiro).</br>
+Sensor B (B): Representa o estado do sensor B. Pode ser 0 (falso) ou 1 (verdadeiro).</br>
+A OR B: Esta é uma operação lógica "OR". Esta coluna indica se pelo menos um dos sensores está no estado verdadeiro. A operação “A OR B” é verdadeira se pelo menos um dos valores de A ou B for 1.</br>
+Mandar uma mensagem? : Indica se uma mensagem deve ser enviada. Se o resultado de “A OU B” for verdadeiro (1), uma mensagem deverá ser enviada.</br>
+
+![Capturar](https://github.com/user-attachments/assets/f83bccd2-029e-416c-837d-faca111a2833)
