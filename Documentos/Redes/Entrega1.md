@@ -5,7 +5,23 @@ Nós escolhemos utilizar o padrão do Blynk, que utiliza um protocolo proprietá
 # Justificativa
 
 ### Processos
-Acabamos optando o protocolo proprietário pelo fato de que a forma de comunicação acaba sendo mais simplificada, ou seja, não possui muitas etapas para a conexão. 
+Acabamos optando o protocolo proprietário pelo fato de que a forma de comunicação acaba sendo mais simplificada, ou seja, não possui muitas etapas para a conexão, como esse exemplo aqui:
+```cpp
+#define BLYNK_TEMPLATE_ID "TMPL2WnHJ55AR" //template criado para o projeto
+#define BLYNK_TEMPLATE_NAME "BEA" //nome do template
+#define BLYNK_AUTH_TOKEN "q3gIDy126exES2zY9lXYzxBFtmhvBdPI"
+#define BLYNK_PRINT Serial // Print serial do Blynk
+
+BLYNK_CONNECTED() {
+Blynk.syncVirtual(V1); // Conectando os pinos virtuais 1, 2 e 3
+Blynk.syncVirtual(V2);
+Blynk.syncVirtual(V3);
+}
+
+Serial.begin(115200); // Comeca a comunicacao da esp com a plataforma do blynk
+Blynk.begin(auth, ssid, pass); //valida os dados passados da rede
+```
+Com essas sequencias de código, você já consegue utilizar o Blynk, sem contar que a personalização do dashboard do blynk é bem simplificada.
 
 ### Comunicação
 A comunicação por mensagens binárias também reduz a sobrecarga de dados, tornando a comunicação entre proprietário e cliente, mais rápida e mais leve, o que é essencial para o projeto, já que estamos usando uma esp32 que não possui um espaço de armazenamento tão amplo. 
