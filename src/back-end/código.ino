@@ -99,7 +99,6 @@ void setup() {
     while(1);
   }else {
     Serial.println("Sensor de peso inicializado com sucesso.");
-    Blynk.virtualWrite(V0, "Sensor de peso incializado."); //Envia o alerta de que o sensor está ligado
   }
 
   scale.set_scale(calibracao); // ajusta a escala. Converte em unidades de medidas reais
@@ -139,7 +138,7 @@ void verificarSensorPeso(float min, float max, int maxConstantes){
   }
 }
 
-// VERIFICAÇÃO DO SENSOR INFRA VERMELHO
+// VERIFICAÇÃO DO SENSOR INFRAVERMELHO
 void verificarSensorInfraV() {
   int estadoSensor = analogRead(sensorInfra); // lê a entrada analógica do sensor. 
   // O valor pode variar de 0 a 1023.
