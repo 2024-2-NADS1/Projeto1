@@ -96,6 +96,14 @@ A instalação só funciona por Windows.
     &emsp;&emsp;|Função sensor de peso.ino <br>
     &emsp;&emsp;|Variaveis globais e bibliotecas.ino <br>
       <br>
+  &emsp;|-->Redes <br>
+  &emsp;|Entrega 1 <br>
+      &emsp;&emsp;|Justificativa <br>
+  &emsp;|Entrega 2 <br>
+      &emsp;&emsp;|Testes <br>
+  &emsp;|Entrega 3 <br>
+      &emsp;&emsp;|Hardware <br>
+  <br>
 |-->imagens<br>
 |-->src<br>
   &emsp;|-->Backend<br>
