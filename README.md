@@ -89,6 +89,13 @@ A instalação só funciona por Windows.
   &emsp;|Entrega 3 <br>
       &emsp;&emsp;|Modelo Físico (de duas tabelas) <br>
       <br>
+  &emsp;|-->Algoritmo e lógica de programação<br>
+    &emsp;&emsp;|Configurações iniciais.ino <br>
+    &emsp;&emsp;|Função principal.ino <br>
+    &emsp;&emsp;|Função sensor infravermelho.ino <br>
+    &emsp;&emsp;|Função sensor de peso.ino <br>
+    &emsp;&emsp;|Variaveis globais e bibliotecas.ino <br>
+      <br>
 |-->imagens<br>
 |-->src<br>
   &emsp;|-->Backend<br>
