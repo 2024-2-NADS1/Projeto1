@@ -12,9 +12,8 @@ char ssid[] = "Nome da rede"; // Nome da rede Wi-Fi
 char pass[] = "Senha da rede"; // Senha da rede Wi-Fi
 
 BLYNK_CONNECTED() {
-  Blynk.syncVirtual(V1); // Conectando os pinos virtuais 1, 2 e 3
-  Blynk.syncVirtual(V2);
-  Blynk.syncVirtual(V3);
+  Blynk.syncVirtual(V1); // Conectando o pino virtual 1
+
 }
 
 // Sensores
@@ -99,6 +98,7 @@ void setup() {
     while(1);
   }else {
     Serial.println("Sensor de peso inicializado com sucesso.");
+    Blynk.notify("Sensor de peso inicializado com sucesso.");
   }
 
   scale.set_scale(calibracao); // ajusta a escala. Converte em unidades de medidas reais
@@ -115,9 +115,10 @@ void verificarSensorPeso(float min, float max, int maxConstantes){
     // verifica se o peso está dentro do ideal
     if(peso < min || peso > max){
       Serial.println("Alerta, fora do limite");
+      Blynk.notify("Alerta, fora do limite"); //envia um alerta para o Blynk
     }else{
       Serial.println("peso"+peso); //correção na impressão do peso
-      Blynk.virtualWrite(V1, peso); //Envia os dados para o Blynk
+      Blynk.notify("peso"+peso);
     }
 
     // verifica se a leitura é constante
@@ -127,6 +128,7 @@ void verificarSensorPeso(float min, float max, int maxConstantes){
             // verifica se o número de leitura consecutivas está passando do maximo permitido
             if (leituraConsecutivas >= maxConstantes) {
                 Serial.println("Alerta: peso repetindo várias vezes");
+                Blynk.notify("Alerta: peso repetindo várias vezes");
             }
         } else {
             leituraConsecutivas = 0; // Reseta se houver variação
@@ -135,6 +137,7 @@ void verificarSensorPeso(float min, float max, int maxConstantes){
     ultimaLeitura = peso; // atualiza a última leitura
   }else{
     Serial.println("Sensor não inicializado");
+    Blynk.notify("Sensor não inicializado");
   }
 }
 
@@ -151,9 +154,12 @@ void verificarSensorInfraV() {
 // Verifica se a tensão do sensor é menor que o valor minimo aceitavel
    if(tensaoInfraV < tensao){
       Serial.println("Alerta : tensão baixa");
+      Blynk.notify("Alerta : tensão baixa"); //envia um alerta para o Blynk
     }else{
       Serial.print("Tensão de alimentação: ");
+      Blynk.notify("Tensão de alimentação: ");
         Serial.println(tensaoInfraV); // Exibe a tensão medida
+        Blynk.notify(tensaoInfraV
     }
 
   // Identificar o momento em que um objeto foi detectado pelo sensor
@@ -161,7 +167,7 @@ void verificarSensorInfraV() {
     // Verifica se houve uma detecção recente (para evitar falsas leituras)
     if (tempo - tempoDeteccao > 100) {
       Serial.println("Objeto detectado!");
-      Blynk.virtualWrite(V2, "Objeto detectado"); //Envia os dados para o Blynk
+      Blynk.notify("Objeto detectado!"); //envia um alerta para o Blynk
       tempoDeteccao = tempo;  // Atualiza o tempo da última detecção
     }
   } 
@@ -169,7 +175,7 @@ void verificarSensorInfraV() {
   // Verifica se o sensor está a muito tempo sem detectar um objeto
   if (tempo - tempoDeteccao > 180000) { // Ajusta o tempo de intervalo em 3 minutos 
     Serial.println("Alerta: Nenhum objeto detectado por muito tempo");
-    Blynk.virtualWrite(V3, "Nenhum objeto detectado");
+    Blynk.notify("Alerta: Nenhum objeto detectado por muito tempo");   
   }
 
   // Atualiza o último estado para comparação futura
@@ -246,6 +252,7 @@ Serial.print("[HX7] peso: ");
 Serial.print(scale.get_units(), 1);
 Serial.print("KG");
 Serial.println();
+Blynk.virtualWrite(V1, scale.get_units());
 #endif
   
 }
