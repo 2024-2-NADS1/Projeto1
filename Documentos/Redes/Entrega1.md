@@ -9,8 +9,12 @@ Acabamos optando o protocolo proprietário pelo fato de que a forma de comunica�
 ```cpp
 #define BLYNK_TEMPLATE_ID "TMPL2WnHJ55AR" //template criado para o projeto
 #define BLYNK_TEMPLATE_NAME "BEA" //nome do template
-#define BLYNK_AUTH_TOKEN "q3gIDy126exES2zY9lXYzxBFtmhvBdPI"
+#define BLYNK_AUTH_TOKEN "q3gIDy126exES2zY9lXYzxBFtmhvBdPI" //chave de autentificação
 #define BLYNK_PRINT Serial // Print serial do Blynk
+
+char auth[] = BLYNK_AUTH_TOKEN; // Token de autenticação
+char ssid[] = "Nome da rede"; // Nome da rede Wi-Fi
+char pass[] = "Senha da rede"; // Senha da rede Wi-Fi
 
 BLYNK_CONNECTED() {
 Blynk.syncVirtual(V1); // Conectando os pinos virtuais 1, 2 e 3
