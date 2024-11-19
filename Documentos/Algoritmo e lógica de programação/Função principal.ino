@@ -1,73 +1,72 @@
 void loop() {
   Blynk.run();
 
-  //configura os motores para o sentido horario
+  // Configura os motores para o sentido horário
   digitalWrite(PINO_IN1, LOW); 
   digitalWrite(PINO_IN2, HIGH);
   digitalWrite(PINO_IN3, LOW);
   digitalWrite(PINO_IN4, HIGH);
 
-  //rampa de aceleracao
-  for (i = 0; i < 128; i=i+10){ 
-    analogWrite(PINO_ENA, i);
-    analogWrite(PINO_ENB, i);
-    delay(TEMPO_RAMPA); //intervalo para incrementar a variavel i
+  // Rampa de aceleração
+  for (int i = 0; i < 128; i += 10) { 
+    ledcWrite(PINO_ENA, i);
+    ledcWrite(PINO_ENB, i);
+    delay(TEMPO_RAMPA);
   }
 
-  //rampa de desaceleracao
-  for (i = 128; i >= 0; i=i-10){ 
-    analogWrite(PINO_ENA, i);
-    analogWrite(PINO_ENB, i);
-    delay(TEMPO_RAMPA); //intervalo para incrementar a variavel i
+  // Rampa de desaceleração
+  for (int i = 128; i >= 0; i -= 10) { 
+    ledcWrite(PINO_ENA, i);
+    ledcWrite(PINO_ENB, i);
+    delay(TEMPO_RAMPA);
   }
 
-  delay(TEMPO_ESPERA); //intervalo de um segundo
+  delay(TEMPO_ESPERA);
 
-  //configura os motores para o sentido anti-horario
+  // Configura os motores para o sentido anti-horário
   digitalWrite(PINO_IN1, HIGH); 
   digitalWrite(PINO_IN2, LOW);
   digitalWrite(PINO_IN3, HIGH);
   digitalWrite(PINO_IN4, LOW);
 
-  //rampa de aceleracao
-  for (i = 0; i < 128; i=i+10){ 
-    analogWrite(PINO_ENA, i);
-    analogWrite(PINO_ENB, i);
-    delay(TEMPO_RAMPA); //intervalo para incrementar a variavel i
+  // Rampa de aceleração
+  for (int i = 0; i < 128; i += 10) { 
+    ledcWrite(PINO_ENA, i);
+    ledcWrite(PINO_ENB, i);
+    delay(TEMPO_RAMPA);
   }
 
-//rampa de desaceleracao
-  for (i = 128; i >= 0; i=i-10){ 
-    analogWrite(PINO_ENA, i); 
-    analogWrite(PINO_ENB, i);
-    delay(TEMPO_RAMPA); //intervalo para incrementar a variavel i
+  // Rampa de desaceleração
+  for (int i = 128; i >= 0; i -= 10) { 
+    ledcWrite(PINO_ENA, i); 
+    ledc Write(PINO_ENB, i);
+    delay(TEMPO_RAMPA);
   }
 
-  delay(TEMPO_ESPERA); //intervalo de um segundo
+  delay(TEMPO_ESPERA);
 
+  int sensorI = analogRead(sensorInfra);
 
-  sensorI = analogRead(sensorInfra);
-
-  if(sensorI < threshold){
+  if(sensorI < threshold) {
     digitalWrite(led, HIGH);
     Serial.println("Lixo Caindo");
-  }else{
-    diigitalWrite(led, LOW);
+  } else {
+    digitalWrite(led, LOW);
   }
 
-// chama a função de verificação do sensor de peso
-verificarSensorPeso(0.0, 5000, 10);
+  // Chama a função de verificação do sensor de peso
+  verificarSensorPeso(0.0, 5000, 10);
   delay(100);
 
-// chama a verificação do sensor infra vermelho
+  // Chama a verificação do sensor infravermelho
   verificarSensorInfraV();
   delay(100);
 
-#ifdef DEBUG_HX711
-Serial.print("[HX7] peso: ");
-Serial.print(scale.get_units(), 1);
-Serial.print("KG");
-Serial.println();
-#endif
-  
+  #ifdef DEBUG_HX711
+  Serial.print("[HX7] peso: ");
+  Serial.print(scale.get_units(), 1);
+  Serial.print(" KG");
+  Serial.println();
+  Blynk.virtualWrite(V1, scale.get_units());
+  #endif
 }
